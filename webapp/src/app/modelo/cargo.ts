@@ -1,9 +1,5 @@
-export class Cargo {
-
-    constructor(
-      public id: number,
-      public name: string,
-      public codigo: string
-    ) {  }
-  
-  }
+export interface Cargo {
+  id: number;
+  nombre: string;
+  codigo: string;
+}

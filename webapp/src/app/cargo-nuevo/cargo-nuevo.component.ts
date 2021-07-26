@@ -14,8 +14,8 @@ export class CargoNuevoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  model = new Cargo(1, "Nombre", "COD");
+  //model = new Cargo(1, "Nombre", "COD");
 
-  onSubmit() { console.log(this.model.name, this.model.name)}
+  onSubmit() { console.log('submit')}
 
 }

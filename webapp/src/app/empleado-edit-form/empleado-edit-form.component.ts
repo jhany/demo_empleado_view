@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router'
 import { DepartamentoService } from "../services/departamento.service";
 import { Location } from "@angular/common";
@@ -7,6 +7,7 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { EmpleadoSueldoDto } from '../modelo/empleadoSueldoDto';
+import { EmpleadoService } from '../services/empleado.service';
 
 
 
@@ -19,25 +20,31 @@ export class EmpleadoEditFormComponent implements OnInit {
   nombre:string = "";
   sueldo:number = 0;
   uuid:string = "";
-  empleadoSueldoDto!: EmpleadoSueldoDto;
+  id:number = 0;
 
   profileForm = this.fb.group({
-    sueldo: ['', Validators.required]
+    sueldo: ['', Validators.required],
+    uuid:[],
+    id:[]
   });
 
   get aliases() {
     return this.profileForm.get('aliases') as FormArray;
   }
 
-  constructor(private fb: FormBuilder, private location: Location, private snackBar: MatSnackBar, private departamentoService: DepartamentoService, private route: ActivatedRoute) { }
+  constructor(private fb: FormBuilder, private location: Location, private snackBar: MatSnackBar, private empleadoService: EmpleadoService, private route: ActivatedRoute) { }
   ngOnInit(): void {
     this.route.queryParams.subscribe(params =>{
-      debugger;
       this.nombre = `${params.primerNombre} ${params.primerApellido}`;
-      this.sueldo = params.sueldo;
-      this.empleadoSueldoDto.id = params.id;
-      this.empleadoSueldoDto.sueldo = params.sueldo;
-      this.empleadoSueldoDto.uuid = params.uuid;
+      // this.sueldo = params.sueldo;
+      // this.uuid = params.uuid;
+      // this.id = params.id;
+
+      this.profileForm.patchValue({
+        id: params.id,
+        sueldo: params.sueldo,
+        uuid:params.uuid
+      })
     })
   }
 
@@ -54,7 +61,8 @@ export class EmpleadoEditFormComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
-    this.departamentoService.insertarDerpartamento(this.profileForm.value).subscribe(
+    debugger;
+    this.empleadoService.actualizarEmpleado(this.profileForm.value).subscribe(
       data => {
         this.openSnackBar("Se insertó el registro","Éxito");
         this.cleanForm();

@@ -1,0 +1,12 @@
+.tblContainer{
+    width: 100%;
+}
+
+.tblContainer>table{
+    width: 100%;
+}
+
+mat-toolbar>a{
+    margin-left: 5px;
+    margin-right: 5px;
+}

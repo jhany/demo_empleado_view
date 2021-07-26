@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router'
 
 export interface PeriodicElement {
   name: string;
@@ -32,11 +33,13 @@ export class DepartamentoComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   clickedRows = new Set<PeriodicElement>();
   
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  
+  nuevo(){
+    this.router.navigate(['departamentoForm'],{relativeTo:this.route})
+  }
 
 }

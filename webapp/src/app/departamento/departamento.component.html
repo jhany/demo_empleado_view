@@ -1,10 +1,11 @@
 <div class="tblContainer">
     <mat-toolbar>
-        <button mat-raised-button color="primary" > 
+        <a mat-raised-button color="primary" routerLink="departamentoForm"> 
             <mat-icon>add</mat-icon>
             Agregar
-        </button>
+        </a>
     </mat-toolbar>
+    <router-outlet></router-outlet>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.

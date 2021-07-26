@@ -13,12 +13,16 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 import { CargoNuevoComponent } from './cargo-nuevo/cargo-nuevo.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTabsModule } from "@angular/material/tabs";
+import { DepartamentoFormComponent } from './departamento-form/departamento-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartamentoComponent,
-    CargoNuevoComponent
+    CargoNuevoComponent,
+    DepartamentoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { CargoNuevoComponent } from './cargo-nuevo/cargo-nuevo.component';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,6 +18,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { DepartamentoFormComponent } from './departamento-form/departamento-form.component';
 import { CargoComponent } from './cargo/cargo.component';
 import { HttpClientModule } from "@angular/common/http";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpClientModule } from "@angular/common/http";
     MatPaginatorModule,
     MatTabsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

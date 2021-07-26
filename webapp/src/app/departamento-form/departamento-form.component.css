@@ -21,3 +21,6 @@ form {
     font-weight: bold;
   }
   
+  .field-full-width{
+    width: 100%;
+  }

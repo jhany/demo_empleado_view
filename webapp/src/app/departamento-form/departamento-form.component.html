@@ -1,53 +1,29 @@
 <div class="tblContainer">
     <mat-toolbar>
-        <a mat-raised-button color="primary">
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!profileForm.valid">
             <mat-icon>save</mat-icon>
             Guardar
-        </a>
+        </button>
         <a mat-raised-button color="primary" (click)="regresar()">
             <mat-icon>assignment_return</mat-icon>
-            Cancelar
+            Regresar
+        </a>
+        <a mat-raised-button color="primary" (click)="cleanForm()">
+            <mat-icon>restore_page</mat-icon>
+            Limpiar
         </a>
     </mat-toolbar>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="field-full-width" appearance="fill">
             <mat-label>Código:</mat-label>
-            <input matInput class="form-control" id="first-name" type="text" formControlName="firstName" required>
+            <input matInput maxlength="3" class="form-control" id="codigo" type="text" formControlName="codigo" required>
         </mat-form-field>
 
-        <label for="last-name">Last Name: </label>
-        <input id="last-name" type="text" formControlName="lastName">
-
-        <div formGroupName="address">
-            <h2>Address</h2>
-
-            <label for="street">Street: </label>
-            <input id="street" type="text" formControlName="street">
-
-            <label for="city">City: </label>
-            <input id="city" type="text" formControlName="city">
-
-            <label for="state">State: </label>
-            <input id="state" type="text" formControlName="state">
-
-            <label for="zip">Zip Code: </label>
-            <input id="zip" type="text" formControlName="zip">
-        </div>
-
-        <div formArrayName="aliases">
-            <h2>Aliases</h2>
-            <button (click)="addAlias()">+ Add another alias</button>
-
-            <div *ngFor="let alias of aliases.controls; let i=index">
-                <!-- The repeated alias template -->
-                <label for="alias-{{ i }}">Alias:</label>
-                <input id="alias-{{ i }}" type="text" [formControlName]="i">
-            </div>
-        </div>
-
-
-        <p>Complete the form to enable button.</p>
-        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+        <mat-form-field class="field-full-width" appearance="fill">
+            <mat-label>Nombre:</mat-label>
+            <input matInput class="form-control" id="nombre" type="text" formControlName="nombre" required>
+        </mat-form-field>
+        
     </form>
 
     <hr>
@@ -55,7 +31,5 @@
     <p>Form Value: {{ profileForm.value | json }}</p>
 
     <p>Form Status: {{ profileForm.status }}</p>
-
-    <button (click)="updateProfile()">Update Profile</button>
 
 </div>

@@ -9,6 +9,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
+import { CargoNuevoComponent } from './cargo-nuevo/cargo-nuevo.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from "@angular/material/tabs";
 import { DepartamentoFormComponent } from './departamento-form/departamento-form.component';
@@ -17,6 +21,7 @@ import { DepartamentoFormComponent } from './departamento-form/departamento-form
   declarations: [
     AppComponent,
     DepartamentoComponent,
+    CargoNuevoComponent,
     DepartamentoFormComponent
   ],
   imports: [
@@ -27,6 +32,8 @@ import { DepartamentoFormComponent } from './departamento-form/departamento-form
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
+    FormsModule,
     MatPaginatorModule,
     MatTabsModule
   ],

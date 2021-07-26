@@ -1,0 +1,7 @@
+.tblContainer{
+    width: 100%;
+}
+
+.tblContainer>table{
+    width: 100%;
+}

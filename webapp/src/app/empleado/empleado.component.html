@@ -1,6 +1,6 @@
 <div class="tblContainer">
     <mat-toolbar>
-        <a mat-raised-button color="primary" routerLink="cargoForm"> 
+        <a mat-raised-button color="primary" routerLink="empleadoForm"> 
             <mat-icon>add</mat-icon>
             Agregar
         </a>
@@ -20,7 +20,7 @@
         <!-- Nombre Column -->
         <ng-container matColumnDef="nombre">
             <th mat-header-cell *matHeaderCellDef> Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            <td mat-cell *matCellDef="let element"> {{ element.nombre }} {{ element.apellido }} </td>
         </ng-container>
 
         <!-- Codigo Column -->

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cargo } from '../modelo/cargo';
 import { ResponseDto } from '../modelo/responseDto';
+import { CargoDto } from "../modelo/cargoDto";
 import { api } from "./api";
 
 @Injectable({
@@ -14,5 +15,9 @@ export class CargoService {
 
   listaCargo(): Observable<ResponseDto>{
     return this.http.post<ResponseDto>(api.listarCargo,{});
+  }
+
+  insertarCargo(data:CargoDto):Observable<ResponseDto>{
+    return this.http.post<ResponseDto>(api.insertarCargo,data);
   }
 }

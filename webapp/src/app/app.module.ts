@@ -12,21 +12,25 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { CargoNuevoComponent } from './cargo-nuevo/cargo-nuevo.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from "@angular/material/tabs";
 import { DepartamentoFormComponent } from './departamento-form/departamento-form.component';
 import { CargoComponent } from './cargo/cargo.component';
 import { HttpClientModule } from "@angular/common/http";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CargoFormComponent } from './cargo-form/cargo-form.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
+import { EmpleadoFormComponent } from './empleado-form/empleado-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartamentoComponent,
-    CargoNuevoComponent,
     DepartamentoFormComponent,
-    CargoComponent
+    CargoComponent,
+    CargoFormComponent,
+    EmpleadoComponent,
+    EmpleadoFormComponent
   ],
   imports: [
     BrowserModule,

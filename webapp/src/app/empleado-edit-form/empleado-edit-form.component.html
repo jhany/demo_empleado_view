@@ -1,0 +1,31 @@
+<div class="tblContainer">
+    <mat-toolbar>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="!profileForm.valid">
+            <mat-icon>save</mat-icon>
+            Guardar
+        </button>
+        <a mat-raised-button color="primary" (click)="regresar()">
+            <mat-icon>assignment_return</mat-icon>
+            Regresar
+        </a>
+        <a mat-raised-button color="primary" (click)="cleanForm()">
+            <mat-icon>restore_page</mat-icon>
+            Limpiar
+        </a>
+    </mat-toolbar>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <h1>{{ nombre }}</h1>
+        <mat-form-field class="field-full-width" appearance="fill">
+            <mat-label>Sueldo:</mat-label>
+            <input matInput min="0" class="form-control" id="codigo" type="number" formControlName="sueldo" [(ngModel)]="sueldo" required>
+        </mat-form-field>
+        
+    </form>
+
+    <hr>
+
+    <p>Form Value: {{ profileForm.value | json }}</p>
+
+    <p>Form Status: {{ profileForm.status }}</p>
+
+</div>

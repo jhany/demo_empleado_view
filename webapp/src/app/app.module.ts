@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CargoFormComponent } from './cargo-form/cargo-form.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { EmpleadoFormComponent } from './empleado-form/empleado-form.component';
+import { EmpleadoEditFormComponent } from './empleado-edit-form/empleado-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EmpleadoFormComponent } from './empleado-form/empleado-form.component';
     CargoComponent,
     CargoFormComponent,
     EmpleadoComponent,
-    EmpleadoFormComponent
+    EmpleadoFormComponent,
+    EmpleadoEditFormComponent
   ],
   imports: [
     BrowserModule,

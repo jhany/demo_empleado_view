@@ -6,6 +6,7 @@ import { CargoComponent } from './cargo/cargo.component';
 import { CargoFormComponent } from './cargo-form/cargo-form.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { EmpleadoFormComponent } from './empleado-form/empleado-form.component';
+import { EmpleadoEditFormComponent } from './empleado-edit-form/empleado-edit-form.component';
 
 const routes: Routes = [
   {path: 'departamento', children:[
@@ -18,7 +19,8 @@ const routes: Routes = [
   ]},
   {path: 'empleado', children:[
     {path: '', component: EmpleadoComponent},
-    {path: 'empleadoForm', component: EmpleadoFormComponent}
+    {path: 'empleadoForm', component: EmpleadoFormComponent},
+    {path: 'empleadoEditForm', component: EmpleadoEditFormComponent}
   ]},
 
 ];

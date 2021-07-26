@@ -1,0 +1,26 @@
+.tblContainer{
+    width: 100%;
+}
+
+.tblContainer>form{
+    width: 100%;
+}
+
+mat-toolbar>a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+form {
+    padding-top: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin: .5em 0;
+    font-weight: bold;
+  }
+  
+  .field-full-width{
+    width: 100%;
+  }

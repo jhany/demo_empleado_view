@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Cargo } from '../objetos/cargo';
+import { Cargo } from '../modelo/cargo';
 
 @Component({
   selector: 'cargo-nuevo',

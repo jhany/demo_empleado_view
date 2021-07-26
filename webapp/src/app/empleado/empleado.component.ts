@@ -9,7 +9,7 @@ import { Empleado } from '../modelo/empleado';
 })
 export class EmpleadoComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'nombre', 'codigo'];
+  displayedColumns: string[] = ['position', 'nombre', 'departamento', 'cargo', 'sueldo', 'editar'];
   dataSource: Empleado[] = [];
   clickedRows = new Set<Empleado>();
   
@@ -25,6 +25,10 @@ export class EmpleadoComponent implements OnInit {
         this.dataSource = resp.respuesta as Empleado[]
       }
     );
+  }
+
+  editar(empleado:Empleado){
+    debugger;
   }
 
 }

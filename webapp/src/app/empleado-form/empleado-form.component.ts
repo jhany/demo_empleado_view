@@ -14,8 +14,18 @@ import { EmpleadoService } from '../services/empleado.service';
 export class EmpleadoFormComponent implements OnInit {
 
   profileForm = this.fb.group({
-    codigo: ['', Validators.required],
-    nombre: ['', Validators.required]
+    primer_nombre: ['', Validators.required],
+    segundo_nombre: ['', Validators.required],
+    primer_apellido: ['', Validators.required],
+    segundo_apellido: ['', Validators.required],
+    sexo: ['', Validators.required],
+    identificacion: ['', Validators.required],
+    direccion: ['', Validators.required],
+    telefono: ['', Validators.required],
+    fecha_nacimiento: ['', Validators.required],
+    sueldo: ['', Validators.required],
+    id_departamento: ['', Validators.required],
+    id_cargo: ['', Validators.required]
   });
 
   get aliases() {
@@ -28,8 +38,18 @@ export class EmpleadoFormComponent implements OnInit {
 
   cleanForm() {
     this.profileForm.patchValue({
-      codigo: '',
-      nombre: ''
+      primer_nombre: '',
+      segundo_nombre: '',
+      primer_apellido: '',
+      segundo_apellido: '',
+      sexo: '',
+      identificacion: '',
+      direccion: '',
+      telefono: '',
+      fecha_nacimiento: '',
+      sueldo: '',
+      id_departamento: '',
+      id_cargo: ''
     });
   }
 
@@ -46,13 +66,13 @@ export class EmpleadoFormComponent implements OnInit {
     console.warn(this.profileForm.value);
     this.empleadoService.insertarEmpleado(this.profileForm.value).subscribe(
       data => {
-        this.openSnackBar("Se insertó el registro","Éxito");
+        this.openSnackBar("Se insertó el registro", "Éxito");
         this.cleanForm();
         setTimeout(() => {
-          this.regresar();  
+          this.regresar();
         }, 1000);
       }, error => {
-        this.openSnackBar("Se produjo un error al insertar","Error");
+        this.openSnackBar("Se produjo un error al insertar", "Error");
       }
     );
 

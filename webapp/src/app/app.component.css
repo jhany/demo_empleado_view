@@ -1,3 +1,7 @@
 .divContenedor{
     width: 100%;
 }
+
+.menu>a{
+    color: white;
+}

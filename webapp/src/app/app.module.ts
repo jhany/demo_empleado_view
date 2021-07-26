@@ -9,11 +9,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTabsModule } from "@angular/material/tabs";
+import { DepartamentoFormComponent } from './departamento-form/departamento-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DepartamentoComponent
+    DepartamentoComponent,
+    DepartamentoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

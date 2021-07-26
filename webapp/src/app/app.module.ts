@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CargoNuevoComponent } from './cargo-nuevo/cargo-nuevo.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -39,7 +39,8 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     MatPaginatorModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

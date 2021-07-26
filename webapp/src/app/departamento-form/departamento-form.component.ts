@@ -48,7 +48,7 @@ export class DepartamentoFormComponent implements OnInit {
     console.warn(this.profileForm.value);
     this.departamentoService.insertarDerpartamento(this.profileForm.value).subscribe(
       data => {
-        this.openSnackBar("Se produjo un error al insertar","Éxito");
+        this.openSnackBar("Se insertó el registro","Éxito");
         this.cleanForm();
         setTimeout(() => {
           this.regresar();  
